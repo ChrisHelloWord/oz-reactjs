@@ -1,0 +1,44 @@
+
+// Define standard breakpoints
+$breakpoints: (
+        "xs": 480px,  // Extra Small
+        "sm": 768px,  // Small Tablets
+        "md": 992px, // Medium Screens
+        "lg": 1280px, // Large Screens
+        "xl": 1440px  // Extra Large Screens
+);
+
+// Mixin for media queries
+@mixin respond($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media screen and (max-width: map-get($breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint '#{$size}' not found in $breakpoints map.";
+  }
+}
+
+
+// Flexbox Centering
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Full Width & Height Utility
+@mixin full-size {
+  width: 100%;
+  height: 100%;
+}
+
+// Responsive Font Sizes
+@mixin fluid-text($min, $max) {
+  font-size: clamp(#{$min}, 2vw, #{$max});
+}
+
+// Gap Utility for Grid/Flex
+@mixin gap($size) {
+  gap: $size;
+}

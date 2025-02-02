@@ -1,0 +1,68 @@
+@import "variables";
+@import "mixins";
+@import "global";
+@import "buttons";
+@import "forms";
+@import "animations";
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+body {
+  background: $background-color;
+  font-family: Lexend;
+}
+
+.container {
+  margin: 0 auto;
+  position: relative;
+  animation: .5s ease-out 0s 1 pageLoad;
+
+  .row>* {
+    padding: 1rem 0;
+  }
+}
+
+.frosted {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+svg.active {
+  color: $secondary-color !important;
+}
+
+.disabled {
+  opacity: .2;
+  cursor: not-allowed !important;
+}
+
+.alert {
+  position: absolute;
+  backdrop-filter: blur(5px);
+  border: 1px solid;
+  padding: .5rem 1rem;
+  border-radius: 4px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+  bottom: calc(100% + 20px);
+  color: #fff;
+  font-weight: 300;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  transition: .25s ease-in-out;
+
+  &.error {
+    background: #e74c3c;
+    border-color: #e74c3c;
+  }
+
+  &.success {
+    background: #2ecc71;
+    border-color: #2ecc71;
+  }
+}

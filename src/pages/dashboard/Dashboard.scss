@@ -1,0 +1,13 @@
+.dashboard-container {
+  .body {
+    >div {
+      position: absolute;
+      height: 250px;
+      width: 350px;
+
+      p {
+        margin: 1rem 0;
+      }
+    }
+  }
+}

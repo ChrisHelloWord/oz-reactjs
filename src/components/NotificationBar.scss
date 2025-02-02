@@ -1,0 +1,101 @@
+@import "../styles/mixins";
+
+.notification-bar {
+  position: absolute;
+  top: 0;
+  right: -400px;
+  height: 100%;
+  width: 400px;
+  background-color: #FCFCF7;
+  transition: .25s ease-in-out;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  @include respond("sm") {
+    width: 100%;
+    right: -450px
+  }
+
+  &.open {
+    right: 0;
+  }
+
+  >.head {
+    padding: 1rem 0;
+    position: relative;
+    text-align: center;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      margin: auto;
+      background-color: #E3E3E3;
+    }
+
+    h4 {
+      font-weight: 300;
+    }
+
+    >svg {
+      position: absolute;
+      left: .5rem;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      cursor: pointer;
+      transition: .25s ease-in-out;
+
+      &:hover {
+        color: #ddd;
+      }
+    }
+  }
+
+  .note {
+    position: relative;
+    min-height: 50px;
+    padding: 1rem 0;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 80%;
+      height: 1px;
+      margin: auto;
+      background-color: #E3E3E3;
+    }
+
+    .head {
+      display: flex;
+      align-items: center;
+
+      .user {
+        position: relative;
+        width: fit-content;
+        padding: .5rem;
+        margin-right: .5rem;
+
+        >svg {
+          width: 40px;
+          height: auto;
+          color: #E3E3E3;
+        }
+      }
+      .content {
+        >span {
+          display: block;
+          color: #b3b3b3;
+          font-weight: 200;
+          padding-top: .2rem;
+        }
+      }
+    }
+  }
+}

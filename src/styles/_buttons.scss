@@ -1,0 +1,78 @@
+.btn {
+  @include flex-center;
+  transition: .25s ease-in-out;
+  background: $primary-color;
+  border: 1px solid $primary-color;
+  color: #fff;
+  width: fit-content;
+  padding: .8rem 1.6rem;
+  cursor: pointer;
+  margin-top: .8rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+
+  &:hover {
+    background: transparent;
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+
+  &:disabled {
+    background-color: transparent;
+    border-color: transparent;
+    cursor: not-allowed;
+  }
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+
+  &:hover {
+    background: $primary-color;
+    border-color: $primary-color;
+    color: #fff;
+  }
+}
+
+.btn-link {
+  background: transparent;
+  border: none;
+  font-weight: 300;
+  color: $primary-color;
+  cursor: pointer;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}
+.spinner {
+  color: $primary-color;
+  animation: spin 1.5s linear infinite;
+}
+
+.btn-sml {
+  font-size: .8rem;
+  padding: .5rem 1rem;
+}
+
+.btn-confirm {
+  background: #2ecc71;
+  border-color: #2ecc71;
+}
+
+.btn-cancel {
+  background: #e74c3c;
+  border-color: #e74c3c;
+}
+
+.btn-holder {
+  display: flex;
+  column-gap: 8px;
+
+  >.btn {
+    flex: 1;
+  }
+}

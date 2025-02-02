@@ -1,0 +1,101 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.login-container {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: .8rem;
+  border-radius: 8px;
+  max-width: unset;
+  background: url(../../assets/imgs/background.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include respond("sm") {
+    width: 100%;
+  }
+
+  >.row {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    min-width: 400px;
+    padding: 2rem 1rem;
+    border-radius: 4px;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255,255,255,.4), rgba(255,255,255,.8));
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    animation: 1s ease-out 0s 1 fadeInFromTop;
+
+    @include respond("sm") {
+      width: 80%;
+      margin: auto;
+      left: -25px;
+      min-width: unset;
+    }
+  }
+
+  h2 {
+    text-align: center;
+    color: $primary-color;
+  }
+
+  .input-holder {
+    margin-top: .8rem;
+    margin-bottom: 1.2rem;
+
+    >svg {
+      transition: .25s ease-in-out;
+      margin-right: .8rem;
+    }
+  }
+
+  input {
+    width: 100%;
+    padding: .8rem;
+  }
+
+  .head {}
+  .body {
+    input {}
+    .btn-primary {
+      width: 100%;
+      border-radius: 25px;
+    }
+    .btn-link {
+      margin-left: auto;
+      font-size: .8rem;
+      color: $secondary-color;
+
+      &:hover {
+        color: $primary-hover;
+      }
+    }
+    .input-holder:hover {
+      >svg {
+        color: $secondary-hover;
+
+        &.eye-icon {
+          color: initial;
+        }
+      }
+    }
+  }
+  .foot {
+    text-align: center;
+
+    .btn {
+      margin: .4rem auto 0;
+    }
+  }
+
+  .eye-icon {
+    position: absolute;
+    right: -8px;
+  }
+}

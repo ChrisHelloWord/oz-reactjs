@@ -1,0 +1,148 @@
+@import "../../styles/mixins";
+
+.profile-card {
+  display: flex;
+  flex-wrap: wrap;
+  background: rgba(255,255,255,.9);
+  min-width: 600px;
+  height: fit-content;
+
+  @include respond("md") {
+    width: 90% !important;
+    min-width: unset;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  >div {
+    height: calc(100% - 20px);
+    align-content: start;
+
+    @include respond("md") {
+      height: fit-content;
+      flex-basis: fit-content;
+    }
+  }
+
+  >.left {
+    flex-basis: 40%;
+    text-align: left;
+
+    svg,
+    img {
+      width: 70%;
+      height: auto;
+    }
+    >p {
+      text-align: left;
+      color: rgba(45, 45, 45, 0.6);
+
+      strong {
+        display: block;
+      }
+    }
+
+    @include respond("md") {
+      text-align: center;
+
+      svg,
+      img {
+        width: 100px;
+      }
+
+      p {
+        text-align: center;
+        margin-top: 0;
+      }
+    }
+  }
+
+  >.right {
+    position: relative;
+    flex-basis: 60%;
+
+    @include respond("md") {
+      position: unset;
+    }
+
+    >svg {
+      position: absolute;
+      top: -16px;
+      right: 0;
+      color: #d4d4d4;
+      transition: .25s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        color: #FF87AB;
+      }
+    }
+
+    .name,
+    .details {
+      p {
+        text-align: right;
+
+        span {
+          float: left;
+        }
+      }
+    }
+
+    input {
+      background: #fff;
+      padding: .8rem .4rem;
+      font-size: 1rem;
+    }
+
+    .btn-reset {
+      float: right;
+
+      @include respond("md") {
+        float: unset;
+        margin: 2rem auto 0;
+      }
+    }
+
+    .btn-submit {
+      float: left;
+    }
+
+    @include respond("md") {
+      >svg {
+        top: 8px;
+      }
+    }
+  }
+
+  >button.btn-back {
+    position: absolute;
+    right: 0;
+    bottom: -45px;
+  }
+
+  .alert {
+    left: unset;
+    right: -.8rem;
+
+    @include respond("md") {
+      left: 0;
+      right: unset;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+.confirmation-box {
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  width: fit-content;
+  height: fit-content;
+  background: #fff;
+  border: 1px solid rgba(231, 76, 60,.4);
+  box-shadow: 0 4px 30px rgba(231, 76, 60,.4);
+  padding: 1rem;
+  min-width: 200px;
+  border-radius: 4px;
+}
